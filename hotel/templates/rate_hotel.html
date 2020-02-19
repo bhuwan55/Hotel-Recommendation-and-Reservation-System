@@ -1,0 +1,54 @@
+{% extends 'master/base.html' %}
+{% block title %} {{hotel.name}} {% endblock %}
+
+  {% block container %}
+ <div class="row">
+   <div class="container">
+     <div class="page-title full-color">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <div class="page-title-heading">
+               
+               <br>
+               <form method="POST">
+                 {{form}}
+                 {% csrf_token %}
+               <button class="btn btn-success" type="submit">Rate Now</button>
+             </form>
+             </div>
+           </div><!-- /.col-md-12 -->
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /page-title -->
+
+     {% if msg%}
+     <div class="alert alert-success">
+       {{msg}}
+     </div>
+     {% endif %}
+     <div class="row">
+       <div class="col-md-8">
+          <br/>
+          <img src="{{MEDIA_URL}}{{hotel.image.url}}">
+          <hr/>
+          <p style="font-size:16px;">{{hotel.description}}</p>
+          <hr/>
+          <h1 style="font-size:22px;font-weight:bold;">Service Provide</h1>
+          <br/>
+          <ul>
+            {% for x in hotel.service_provide.all %}
+            <li><h3 style="font-size:16px;margin-top:5px;">{{x.service}}</h3></li>
+            {% endfor %}
+          </ul>
+          <br>
+          <ul><h1 style="font-size:22px;font-weight:bold;">Location</h1>
+            <p style="font-size:16px;">{{hotel.location}}</p>
+          </ul>
+          <hr/>
+       </div>
+     </div>
+   </div>
+ </div>
+
+  {% endblock %}

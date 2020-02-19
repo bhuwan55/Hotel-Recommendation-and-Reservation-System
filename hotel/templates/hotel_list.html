@@ -1,0 +1,60 @@
+{% extends 'master/base.html' %}
+{% block title %} Hotel List {% endblock %}
+{% block container %}
+
+<div class="row">
+  <div class="container">
+    <div class="page-title full-color">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="page-title-heading">
+              <h2 class="title">{{cat.name}}</h2>
+            </div>
+          </div><!-- /.col-md-12 -->
+        </div><!-- /.row -->
+      </div><!-- /.container -->
+    </div><!-- /page-title -->
+
+    <section class="flat-row padding-big">
+      <div class="container">
+        <div class="column">
+          {% for hol in hotel %}
+          <div class="col-md-4">
+            <div class="content-pad">
+              <div class="post-item row">
+                <div class="col-md-6 col-sm-12">
+                  <div class="content-pad">
+                    <div class="item-thumbnail">
+                      <a href="{% url 'all_hotels:hotel' hol.id %}">
+                        <img src="{{MEDIA_URL}}{{hol.image.url}}" style="height:200px;width:200px;overflow:hidden;" alt="image">
+                        <span class="thumbnail-overlay">{{hol.location}}</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                  <div class="content-pad">
+                    <div class="item-content">
+                      <h3 class="item-title">
+                        <a href="{% url 'all_hotels:hotel' hol.id %}" title="Your Career Starts Here" class="main-color-1-hover">{{hol.name}}</a>
+                      </h3>
+                      <div class="shortcode-blog-excerpt">{{hol.description|truncatewords:20}}</div>
+                      <div class="item-meta">
+                        <a class="flat-button" href="{% url 'all_hotels:hotel' hol.id %}" title="Your Career Starts Here">DETAILS <i class="fa fa-angle-right"></i></a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div><!--/post-item-->
+            </div>
+
+          </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+{% endblock %}

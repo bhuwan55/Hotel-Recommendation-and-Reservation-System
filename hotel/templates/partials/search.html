@@ -1,0 +1,20 @@
+<div class="col-md-4 serch-part" style="padding:2%">
+  <div id="sb-search" class="sb-search" style="float:none">
+    <form action="{% url 'search' %}" method="post">
+      {% csrf_token %}
+      <input class="sb-search-input" placeholder="Search for hotel" type="search" name="key" id="search">
+             <button class="btn btn-default" type="submit">search</button>
+
+    </form>
+  </div>
+</div>
+<div class="col-md-4 serch-part" style="padding:2%">
+  <div id="sb-search" class="sb-search" style="float:none">
+    <form action="{% url 'searchloc' %}" method="post">
+      {% csrf_token %}
+      <input class="sb-search-input" placeholder="Search by location" type="search" name="key" id="search">
+             <button class="btn btn-default" type="submit">search</button>
+
+    </form>
+  </div>
+</div>

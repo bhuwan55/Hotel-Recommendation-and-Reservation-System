@@ -1,0 +1,56 @@
+{% load staticfiles %}
+<!-- Header -->
+        <header id="header" class="header">
+            <div class="header-wrap">
+                <div class="container">
+                    <div class="header-wrap clearfix">
+                        <div id="logo" class="logo">
+                            <a href="{% url 'home' %}" rel="home">
+                                <img src="{% static 'images/logo.png' %}" alt="image">
+                            </a>
+                        </div><!-- /.logo -->
+                        {% include 'partials/search.html' %}
+                        <!-- search-scripts -->
+                        <script src="{% static 'js/classie.js' %}"></script>
+                        <script src="{% static 'js/uisearch.js' %}"></script>
+                        <script>
+                        new UISearch( document.getElementById( 'sb-search' ) );
+                      </script>
+                      <!-- //search-scripts -->
+                      <!---->
+
+                        <div class="nav-wrap">
+
+
+                            <nav id="mainnav" class="mainnav">
+                                <ul class="menu">
+                                  
+                                    <li>
+                                        <a href="#">Hotels <span class="menu-description">By Category</span></a>
+                                        <ul class="submenu">
+                                          {% for c in category %}
+                                            <li><a href="{% url 'all_hotels:category_hotel' c.id %}">{{c.name}}</a></li>
+                                          {% endfor %}
+                                        </ul><!-- /.submenu -->
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'team' %}">About  <span class="menu-description">About us</span></a>
+                                        <ul class="submenu">
+                                            <li><a href="{% url 'team' %}">Our Team</a></li>
+                                        </ul><!-- /.submenu -->
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'contact:contact' %}">Contact Us <span class="menu-description">Connect with Us</span></a>
+
+                                    </li>
+
+
+                                </ul><!-- /.menu -->
+                            </nav><!-- /.mainnav -->
+
+                        </div><!-- /.nav-wrap -->
+                    </div><!-- /.header-wrap -->
+
+                </div><!-- /.container-->
+            </div><!-- /.header-wrap-->
+        </header><!-- /.header -->

@@ -1,0 +1,49 @@
+{% extends 'master/base.html' %}
+{% block container %}\
+<!-- google map-->
+
+<head>
+
+<section class="flat-row full-color-v1">
+           <div class="container" >
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="flat-events">
+                           <div class="grid-item color-full">
+                               <div class="event-item">
+                                   <div class="grid-item-content">
+                                       <h2 class="title"> <br><br><br>Hotels <br><br>By <br><br>Category<br></h2>
+                                   </div>
+                               </div>
+                           </div>
+                        {% for c in category %}
+                           <div class="grid-item">
+                               <div class = "grid-item-inner">
+                                   <div class="event-item">
+                                       <div class="event-thumbnail">
+                                           <a href="{% url 'all_hotels:category_hotel' c.id %}"><img src="{{MEDIA_URL}}{{c.image.url}}" alt="image" style="width:1000px;height:292px;">
+                                           </a>
+                                       </div><!-- /event-thumbnail -->
+
+                                       <div class="event-overlay">
+                                           <div class="cs-post-header">
+                                               <div class="cs-category-links">
+                                                   <a class="overlay-top" href="{% url 'all_hotels:category_hotel' c.id %}">
+                                                       <h4>{{c.name}}</h4>
+
+                                                   </a>
+                                               </div>
+                                           </div>
+                                       </div><!-- /event-overlay -->
+                                   </div>
+                               </div>
+                           </div>
+                        {% endfor %}
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </section>
+
+
+{% endblock %}

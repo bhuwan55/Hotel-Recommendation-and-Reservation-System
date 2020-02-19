@@ -1,0 +1,110 @@
+.topnav{
+background-color: black;
+height: 5%;
+color: #fff;
+}
+html body {
+       overflow-x: hidden;
+   }
+.container a{
+  color: #fff;
+
+}
+.socialicon {
+  color: #fff;
+float: right;
+
+}
+.socialicon a{
+  color: #fff;
+}
+.titlerow{
+  background-color:#fff;
+  height: 20%;
+  color: black;
+  padding: 5px;
+}
+}
+}
+.fa-search{
+background-color: red!important;
+color: #000!important;
+}
+.navbar-default{
+background-color: skyblue;
+color: #000;
+}
+.carousel-inner{
+margin-top:0%;
+
+}
+.item img{
+  width: 100%!important;
+  height: 600px;
+
+}
+.Blog img{
+  height: 242px;
+  width: 200px;
+}
+.Blog{
+  background-color: skyblue!important;
+}
+a{
+  text-decoration: none!important;
+}
+a:hover{
+    text-decoration: none!important;
+  }
+
+.panel-default{
+background-color: pink!important;
+
+}
+.panel-heading{
+background-color: black!important;
+
+}
+.clss{
+  background-color: black!important;
+
+}
+.mytab{
+background-color: skyblue!important;
+
+}
+.nav-tabs{
+  background-color: black!important;
+}
+#div1{
+background-color: red;
+}
+#div2{
+background-color: green;
+}
+#Wrapper{
+    background:url('img/saurav.jpeg');
+    width:300px;
+    height:300px;
+}
+
+#Content{
+    background-color:yellow;
+    opacity: 0.5;
+    width:100%;
+    height:100%;
+}
+scroll-container {
+  display: block;
+  width: 350px;
+  height: 200px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+scroll-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  font-size: 3em;
+}

@@ -1,0 +1,65 @@
+{% extends 'master/base.html' %}
+{% block title %} {{hotel.name}} {% endblock %}
+
+{% block container %}
+ <div class="row">
+   <div class="container">
+     <div class="page-title full-color">
+       <div class="container">
+         <div class="row">
+           <div class="col-md-12">
+             <div class="page-title-heading">
+               <h2 class="title">{{hotel.name}}:</h2>
+          
+               <a class="btn btn-success" href="{% url 'all_hotels:rate' hotel.id  %}" style="margin-left:5%;">Rate Hotel</a>
+                <a class="btn btn-success" href="{% url 'all_hotels:reserve' hotel.id  %}" style="margin-left:5%;">Reserve Hotel</a>
+                <h4 class ="title">Available Rooms:{{hotel.available_rooms}}</h4>
+             </div>
+           </div><!-- /.col-md-12 -->
+         </div><!-- /.row -->
+       </div><!-- /.container -->
+     </div><!-- /page-title -->
+     <div class="row">
+       <div class="container">
+
+
+       <div class="col-md-12">
+          <br/>
+          <img src="{{MEDIA_URL}}{{hotel.image.url}}" style ="height:400px; width:1000px;">
+
+          </style>
+          <hr/>
+          <p style="font-size:16px;text-align:justify">{{hotel.description}}</p>
+          <hr/>
+          <h1 style="font-size:22px;"> <button type="button" class="btn btn-primary">Service Provide</button></h1>
+          <br/>
+          <ul>
+            {% for x in hotel.service_provide.all %}
+
+            <li><h3 style="font-size:16px;margin-top:5px;">{{x.service}}</h3></li>
+            {% endfor %}
+          </ul> <br>
+          <h1 style="font-size:22px;"> <button type="button" class="btn btn-primary">Price Range</button></h1>
+          <br/>
+          <ul>
+          <ul>
+            {% for y in hotel.price.all %}
+
+            <li><h2 style="font-size:16px;margin-top:5px;">{{y.price}}</h2></li>
+            {% endfor %}
+          </ul>
+          <br>
+
+        <ul>
+          <h1 style="font-size:22px;"> <button type="button" class="btn btn-primary"> Location </button></h1>
+          <br> 
+          <p style="font-size:16px;">{{hotel.location}}</p>
+          </ul>
+          <hr/>
+          </div>
+       </div>
+     </div>
+   </div>
+ </div>
+
+  {% endblock %}

@@ -1,0 +1,35 @@
+{% extends 'master/base.html' %}
+{% block container %}
+<div class="page-title full-color">
+           <div class="container">
+               <div class="row">
+                   <div class="col-md-12">
+                       <div class="page-title-heading">
+                           <h2 class="title">Edit Reservation</h2>
+                       </div>
+                       <div class="breadcrumbs">
+                           <ul>
+                               <li class="home"><a href="{% url 'home' %}">Home </a></li>
+                               <li>\ Edit reservation</li>
+                           </ul>
+                       </div>
+                   </div><!-- /.col-md-12 -->
+               </div><!-- /.row -->
+           </div><!-- /.container -->
+       </div><!-- /page-title -->
+       <div class="container">
+       <form method="POST" role="form">
+         <br>
+            {{form}}
+            {% csrf_token %}
+         <button type="submit" class="btn btn-primary">Send</button>
+
+         </form>
+         {% if msg%}
+         <div class="alert alert-success">
+           {{msg}}
+         </div>
+         {% endif %}
+         </div>
+         </div>
+{% endblock %}
